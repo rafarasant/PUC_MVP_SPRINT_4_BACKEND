@@ -1,0 +1,86 @@
+[2024-07-07 16:32:52,610] INFO _log() L187  127.0.0.1 - - [07/Jul/2024 16:32:52] "GET /consultas HTTP/1.1" 200 - - call_trace=C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\werkzeug\_internal.py L187 
+[2024-07-07 16:33:37,328] INFO _log() L187  127.0.0.1 - - [07/Jul/2024 16:33:37] "OPTIONS /editar HTTP/1.1" 200 - - call_trace=C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\werkzeug\_internal.py L187 
+[2024-07-07 16:33:37,354] ERROR log_exception() L1414 Exception on /editar [PUT] - call_trace=C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\flask\app.py L1414
+Traceback (most recent call last):
+  File "C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.ProgrammingError: Error binding parameter 3: type 'tuple' is not supported
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\flask_openapi3\scaffold.py", line 127, in view_func
+    response = func(**func_kwargs)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\decun\OneDrive\Rafael\PUC-POS_GRADUCAO_ENGENHARIA_DE_SOFTWARE\Sprint_4\mvp_api\app.py", line 204, in editar_consulta
+    session.commit()
+  File "C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1454, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 832, in commit
+    self._prepare_impl()
+  File "C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 811, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 3449, in flush
+    self._flush(objects)
+  File "C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 3588, in _flush
+    with util.safe_reraise():
+  File "C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 3549, in _flush
+    flush_context.execute()
+  File "C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 237, in save_obj
+    _emit_update_statements(
+  File "C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1001, in _emit_update_statements
+    c = connection._execute_20(
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1710, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1577, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1953, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2134, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (sqlite3.ProgrammingError) Error binding parameter 3: type 'tuple' is not supported
+[SQL: UPDATE paciente SET nome=?, sobrenome=?, numero=?, complemento=?, bairro=?, cidade=? WHERE paciente.id = ?]
+[parameters: ('Mario', 'Fagundes', ('300',), ('1112',), ('Botafogo',), ('Rio de Janeiro',), 4)]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-07-07 16:33:37,614] INFO _log() L187  127.0.0.1 - - [07/Jul/2024 16:33:37] "[35m[1mPUT /editar HTTP/1.1[0m" 500 - - call_trace=C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\werkzeug\_internal.py L187 
+[2024-07-07 16:33:49,891] INFO _log() L187  127.0.0.1 - - [07/Jul/2024 16:33:49] "GET /consultas HTTP/1.1" 200 - - call_trace=C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\werkzeug\_internal.py L187 
+[2024-07-07 16:33:53,748] INFO _log() L187  127.0.0.1 - - [07/Jul/2024 16:33:53] "GET /consultas HTTP/1.1" 200 - - call_trace=C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\werkzeug\_internal.py L187 
+[2024-07-07 16:34:38,945] INFO _log() L187  127.0.0.1 - - [07/Jul/2024 16:34:38] "GET /consultas HTTP/1.1" 200 - - call_trace=C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\werkzeug\_internal.py L187 
+[2024-07-07 16:34:51,774] INFO _log() L187  127.0.0.1 - - [07/Jul/2024 16:34:51] "OPTIONS /editar HTTP/1.1" 200 - - call_trace=C:\Users\decun\OneDrive\Rafael\PJR4\MVP_PUC_RIO_CONSULTORIO_BACKEND-main\venv\Lib\site-packages\werkzeug\_internal.py L187 
