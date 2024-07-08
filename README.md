@@ -70,3 +70,9 @@ No navegador, abra o link abaixo para visualizar o status da API em execução.
 ```
 localhost:7000/
 ```
+
+### 6 - Comandos dos Docker
+
+gerar imagem: docker build -t flask-app .
+
+rodar o docker: docker run -d -p 5000:5000 flask-app
