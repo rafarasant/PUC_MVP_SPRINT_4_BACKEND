@@ -76,3 +76,7 @@ localhost:7000/
 gerar imagem: docker build -t flask-app .
 
 rodar o docker: docker run -d -p 5000:5000 flask-app
+
+### 7 - Vídeo de apresentação da aplicação
+
+https://drive.google.com/file/d/1jMUT1OJBV_OoOJ0radaH3sA5VcgCTCC5/view?usp=sharing
