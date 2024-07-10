@@ -7,7 +7,8 @@ No presente projeto, o SAGC é empregado no contexto de um consultório odontol�
 prestados por um único profissional dentista. Cabe ao seu (sua) secretário(a) o uso dessa ferramenta 
 para cadastrar os pacientes e marcar suas consultas.
 
-Este projeto foi desenvolvido para o MVP da Sprint 1 da **Pós Gradução de Engenharia de Softwarer da PUC-Rio**. 
+Este projeto foi desenvolvido para o MVP da Sprint 4 da **Pós Gradução de Engenharia de Softwarer da PUC-Rio e
+trata-se de uma atualização do projeto da Srint 1 do mesmo curso.**. 
 <br>
 ---
 <br>
@@ -21,40 +22,23 @@ Para executar esta aplicação, siga os passos enumerados a seguir:
 Clone o repositório através do comando abaixo:
 
 ```
-[git clone (...)](https://github.com/rafarasant/MVP_PUC_RIO_CONSULTORIO_BACKEND.git)
+[git clone (...)](https://github.com/rafarasant/PUC_MVP_SPRINT_4_BACKEND.git)
 ```
 
+### 2 - Crie e execute a imagem do Docker e o container para o componente back-end da aplicação
 
-### 2 - Instale as dependências
-
-Para que seja possível executar a aplicação, é preciso instalar primeiramente todas as *libs* (bibliotecas) listadas no arquivo *requirements.txt*. 
-Isso deve ser feito no diretório raiz, através do terminal, a partir do seguinte comando.
-
-> Importante: recomença-se fortemente o uso de ambientes virtuais do tipo [virtualenv](https://virtualenv.pypa.io/en/latest/installation.html).
-
-> Atenção: O símbolo *(env)$* presente nos comandos abaixo refere-se tão somente a um exemplo de ambiente virtual ativado. Contudo, não faz por parte dos
-> comandos em si.
+Para que seja possível executar a aplicação, é preciso proceder primeiramente à criação tanto da imagem do Docker quanto
+do container para o componente back-end da aplicação. Isso deve ser feito no diretório raiz do projeto, a partir do terminal, através do seguinte comando:
 
 ```
-(env)$ pip install -r requirements.txt
+docker build -t flask-app .
 ```
 
-
-### 3 - Execute a API
-
-No terminal, execute o comando abaixo (certifique-se de que a porta 7000 está sendo usada para este projeto):
+Em seguida, a imagem deve ser executada através do comando abaixo:
 
 ```
-(env)$ flask run --host 0.0.0.0 --port 7000
+docker run -d -p 5000:5000 flask-app
 ```
-
-Caso esteja em modo de desenvolvimento, recomenda-se executar o comando acima junto do parâmetro *reload*, o qual reinicia o servidor automaticamente
-após qualquer alteração no código fonte.
-
-```
-(env)$ flask run --host 0.0.0.0 --port 7000 --reload
-```
-
 
 ### 5 - Banco de dados
 
