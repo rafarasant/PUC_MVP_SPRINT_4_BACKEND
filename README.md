@@ -40,27 +40,21 @@ Em seguida, a imagem deve ser executada através do comando abaixo:
 docker run -d -p 5000:5000 flask-app
 ```
 
-### 5 - Banco de dados
+### 3 - Banco de dados
 
-A pasta *database*, localizada na raiz do projeto, contém o arquivo *mvp.db*. Nela já se encontram criadas as duas tabelas necessárias para a execução
-da API (*paciente* e *consulta*). Ainda na pasta *database*, estão os arquivos do tipo *.txt* com os comandos em SQL para a criação das duas tabelas e para 
-inserção dos dados referentes a cada uma.
-
+A pasta *database*, localizada na raiz do projeto, contém o arquivo *pacientes.sqlite3*. Nela já se encontram criadas as duas tabelas necessárias para a execução
+da API (*paciente* e *consulta*).
 
 ### 4 - Documentação da API no navegador (Swagger)
 
 No navegador, abra o link abaixo para visualizar o status da API em execução.
 
 ```
-localhost:7000/
+localhost:5000/
 ```
 
-### 6 - Comandos dos Docker
+### 5 - Vídeo de apresentação da aplicação
 
-gerar imagem: docker build -t flask-app .
-
-rodar o docker: docker run -d -p 5000:5000 flask-app
-
-### 7 - Vídeo de apresentação da aplicação
+O vídeo de apresentação do trabalho pode ser acessado através do link abaixo:
 
 https://drive.google.com/file/d/1jMUT1OJBV_OoOJ0radaH3sA5VcgCTCC5/view?usp=sharing
